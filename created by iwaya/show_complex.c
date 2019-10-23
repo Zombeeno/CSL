@@ -1,4 +1,4 @@
-/*このプログラム:"show_complex"関数の導入で行列表示のコードが簡略化された2*2cmatrix.c*/
+/*このプログラム:"show_complex"関数の導入で行列表示のコードが簡略化されたproto1.c*/
 #include<math.h>
 #include<stdio.h>
 #include<complex.h>

@@ -1,4 +1,4 @@
-/*このプログラム:複素行列A,B,Cを複素型で生成する。次数は34行目により可変*/
+/*このプログラム:複素行列A,B,Cを複素型で生成する。*/
 #include<math.h>
 #include<stdio.h>
 #include<complex.h>

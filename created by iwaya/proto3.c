@@ -1,4 +1,4 @@
-/*このプログラム:複素行列をプリントする関数"print_cmatrix"を導入した。*/
+/*このプログラム:複素行列をプリントする関数"print_cmatrix"を導入。3*2のsizeを持つ複素行列を出力する。*/
 #include<math.h>
 #include<stdio.h>
 #include<complex.h>

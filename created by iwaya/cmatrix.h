@@ -1,5 +1,5 @@
 /* Utility for vector and matrix allocation/deallocation */
-/*計算機実験で配られたcmatrix.hに、double complex型の行列をallocできるコードを付記したもの*/
+
 /* List of functions
 
   alloc_dvector : allocate vector of double
@@ -18,6 +18,7 @@
   free_dmatrix : deallocate matrix of double
   free_fmatrix : deallocate matrix of float
   free_imatrix : deallocate matrix of int
+  free_cmatrix : deallocate matrix of double complex
 
   fprint_dvector: print out vector of double
   fprint_fvector: print out vector of float
@@ -181,6 +182,12 @@ static inline void free_fmatrix(float **mat) {
 
 /* deallocate float matrix of int */
 static inline void free_imatrix(int **mat) {
+  free(mat[0]);
+  free(mat);
+}
+
+/* deallocate float matrix of double complex */
+static inline void free_cmatrix(double complex **mat) {
   free(mat[0]);
   free(mat);
 }

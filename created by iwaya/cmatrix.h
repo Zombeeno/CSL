@@ -1,5 +1,5 @@
 /* Utility for vector and matrix allocation/deallocation */
-
+/*計算機実験で配布されたヘッダを複素行列に対応させたもの*/
 /* List of functions
 
   alloc_dvector : allocate vector of double

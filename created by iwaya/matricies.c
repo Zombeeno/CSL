@@ -7,7 +7,12 @@
 /*複素数はdouble complex型で定義でき、虚数単位はIで入力*/
 
 void show_complex(double complex z){
+  if(cimag(z)>=0){
   printf("%f+%fi ",creal(z),cimag(z));
+  }
+  else{
+    printf("%f%fi ",creal(z),cimag(z));
+  }
 }
 
 static inline void print_cmatrix(int m, int n, double complex **mat) {

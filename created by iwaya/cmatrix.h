@@ -5,6 +5,7 @@
   alloc_dvector : allocate vector of double
   alloc_fvector : allocate vector of float
   alloc_ivector : allocate vector of int
+  alloc_cvector : allocate vector of double complex
 
   alloc_dmatrix : allocate matrix of double
   alloc_fmatrix : allocate matrix of float
@@ -14,6 +15,7 @@
   free_dvector : deallocate vector of double
   free_fvector : deallocate vector of float
   free_ivector : deallocate vector of int
+  free_cvector : deallocate vector of double complex
 
   free_dmatrix : deallocate matrix of double
   free_fmatrix : deallocate matrix of float
@@ -46,6 +48,7 @@
 /* useful macros */
 #define vec_ptr(vec) &(vec)[0]
 #define mat_ptr(mat) &(mat)[0][0]
+#define vec_elem(vec, i) (vec)[(i)]
 #define mat_elem(mat, i, j) (mat)[(j)][(i)]
 
 /* allocate vector of double */
@@ -76,6 +79,17 @@ static inline int *alloc_ivector(int n) {
   vec = (int*)malloc((size_t)(n * sizeof(int)));
   if (vec == NULL) {
     fprintf(stderr, "Error: allocation failed in alloc_ivector\n");
+    exit(1);
+  }
+  return vec;
+}
+
+/* allocate vector of double complex */
+static inline double complex *alloc_cvector(int n) {
+  double complex*vec;
+  vec = (double complex*)malloc((size_t)(n * sizeof(double complex)));
+  if (vec == NULL) {
+    fprintf(stderr, "Error: allocation failed in alloc_dvector\n");
     exit(1);
   }
   return vec;
@@ -135,7 +149,7 @@ static inline int **alloc_imatrix(int m, int n) {
   return mat;
 }
 
-/* allocate m x n column-major matrix of complex double */
+/* allocate m x n column-major matrix of double complex*/
 static inline double complex **alloc_cmatrix(int m, int n) {
   int i;
   double complex **mat;
@@ -165,6 +179,11 @@ static inline void free_fvector(float *vec) {
 
 /* deallocate vector of int */
 static inline void free_ivector(int *vec) {
+  free(vec);
+}
+
+/* deallocate vector of double complex*/
+static inline void free_cvector(double complex *vec) {
   free(vec);
 }
 

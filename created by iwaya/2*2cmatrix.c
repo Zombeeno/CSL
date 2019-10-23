@@ -1,3 +1,4 @@
+/*このプログラムのすること:2*2のサイズを持つ複素行列を作ってプリントするだけ*/
 #include<math.h>
 #include<stdio.h>
 #include<complex.h>

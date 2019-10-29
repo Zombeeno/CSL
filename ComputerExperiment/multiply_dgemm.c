@@ -2,7 +2,6 @@
 #include "mersenne_twister.h"
 #include "dgemm.h"
 #include <stdio.h>
-#include "lapack-3/lapacke.h"
 int main() {
   int n = 1000;
   int seed = 12345;
